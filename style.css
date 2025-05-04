@@ -13,3 +13,9 @@ Text Domain:	 hello-academy-child
 /*
     Add your custom styles here
 */
+.eael-pricing-icon {
+    display: none !important;
+}
+.eael-pricing.style-2 .eael-pricing-item .header {
+    padding: 25px 15px;
+}
