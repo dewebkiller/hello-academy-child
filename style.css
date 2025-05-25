@@ -19,3 +19,46 @@ Text Domain:	 hello-academy-child
 .eael-pricing.style-2 .eael-pricing-item .header {
     padding: 25px 15px;
 }
+body .wpp-popup-wrapper {
+    position:fixed;
+    z-index:99999;
+    transition: all .5s cubic-bezier(.14,.06,.41,1.39);
+    opacity:0;
+   visibility:hidden;
+  }
+  body .wpp-popup-wrapper.popup-is-visible {
+    opacity:1;
+    visibility:visible;
+  }
+  
+  /* Prevent Body from Scrolling when Popup is visible */
+  body.wpp-noscroll {
+    overflow: hidden;
+  }
+  
+  /* Center Align Popup Content inside the Section */
+  .wpp-popup-content {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+  }
+  
+  .wpp-popup-close {
+    cursor:pointer;
+  }
+  .profile-dropdown-wrapper:hover .elementor-nav-menu--main .elementor-sub-menu {
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+}
+ /* .profile-menu .hfe-has-submenu-container > a {
+     font-size: 0;
+    background: url(https://secure.gravatar.com/avatar/a2c0fc6d42cf80c93b6c979a59128b0c13c6cd913721a58b84c8a148b0b7813d?s=40&d=mm&r=g);
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--academy-border-color);
+}
+.hfe-submenu-icon-arrow .hfe-nav-menu .parent-has-child .sub-arrow i:before {
+	display: none; 
+}*/
