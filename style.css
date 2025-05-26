@@ -14,51 +14,86 @@ Text Domain:	 hello-academy-child
     Add your custom styles here
 */
 .eael-pricing-icon {
-    display: none !important;
+  display: none !important;
 }
+
 .eael-pricing.style-2 .eael-pricing-item .header {
-    padding: 25px 15px;
+  padding: 25px 15px;
 }
+
 body .wpp-popup-wrapper {
-    position:fixed;
-    z-index:99999;
-    transition: all .5s cubic-bezier(.14,.06,.41,1.39);
-    opacity:0;
-   visibility:hidden;
-  }
-  body .wpp-popup-wrapper.popup-is-visible {
-    opacity:1;
-    visibility:visible;
-  }
-  
-  /* Prevent Body from Scrolling when Popup is visible */
-  body.wpp-noscroll {
-    overflow: hidden;
-  }
-  
-  /* Center Align Popup Content inside the Section */
-  .wpp-popup-content {
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-  }
-  
-  .wpp-popup-close {
-    cursor:pointer;
-  }
-  .profile-dropdown-wrapper:hover .elementor-nav-menu--main .elementor-sub-menu {
-    display: block !important;
-    visibility: visible;
-    opacity: 1;
+  position: fixed;
+  z-index: 99999;
+  transition: all .5s cubic-bezier(.14, .06, .41, 1.39);
+  opacity: 0;
+  visibility: hidden;
 }
- /* .profile-menu .hfe-has-submenu-container > a {
-     font-size: 0;
-    background: url(https://secure.gravatar.com/avatar/a2c0fc6d42cf80c93b6c979a59128b0c13c6cd913721a58b84c8a148b0b7813d?s=40&d=mm&r=g);
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid var(--academy-border-color);
+
+body .wpp-popup-wrapper.popup-is-visible {
+  opacity: 1;
+  visibility: visible;
 }
-.hfe-submenu-icon-arrow .hfe-nav-menu .parent-has-child .sub-arrow i:before {
-	display: none; 
-}*/
+
+/* Prevent Body from Scrolling when Popup is visible */
+body.wpp-noscroll {
+  overflow: hidden;
+}
+
+/* Center Align Popup Content inside the Section */
+.wpp-popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wpp-popup-close {
+  cursor: pointer;
+}
+
+.profile-dropdown-wrapper {
+  cursor: pointer;
+}
+
+.profile-menu .hfe-menu-toggle.sub-arrow {
+  display: none;
+}
+
+.profile-dropdown-wrapper:hover .elementor-nav-menu--main .elementor-sub-menu {
+  display: block !important;
+  visibility: visible;
+  opacity: 1;
+}
+
+.profile-dropdown-wrapper:hover .sub-menu,
+.hfe-has-submenu-container:hover .sub-menu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  transform: translateY(0) !important;
+  margin-top: 0 !important;
+  min-width: 200px;
+  z-index: 9999;
+}
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  min-width: 200px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  list-style: none;
+  display: none;
+}
+
+.sub-menu li {
+  white-space: nowrap;
+}
+
+.sub-menu li:hover {
+  background-color: #f0f0f0;
+}
