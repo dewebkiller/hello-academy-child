@@ -89,3 +89,19 @@ function dwk_get_loggedin_users()
     ob_get_clean();
     return $output;
 }
+
+// Google tag (gtag.js) 
+function add_google_analytics_script() {
+    ?>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYE554WDDY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYE554WDDY');
+    </script>
+    <?php
+}
+add_action('wp_footer', 'add_google_analytics_script', 20);
