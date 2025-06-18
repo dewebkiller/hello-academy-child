@@ -38,7 +38,9 @@ body .wpp-popup-wrapper.popup-is-visible {
 body.wpp-noscroll {
   overflow: hidden;
 }
-
+.academy-archive-course-widget__body:has(input[value="public"]) label:nth-of-type(3) {
+  display: none;
+}
 /* Center Align Popup Content inside the Section */
 .wpp-popup-content {
   display: flex;
@@ -96,4 +98,19 @@ body.wpp-noscroll {
 
 .sub-menu li:hover {
   background-color: #f0f0f0;
+}
+
+.eael-pricing.style-2 .eael-pricing-item.featured {
+  box-shadow: none !important;
+}
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+  .elementor-widget-n-tabs .e-n-tabs-heading {
+      display: flex;
+  }
+  .elementor.elementor .elementor-widget-n-tabs.e-n-tabs-mobile .e-n-tab-title {
+      margin: 0 !important;
+  }
+  .elementor.elementor .elementor-widget-n-tabs.e-n-tabs-mobile .e-n-tab-title:not(:first-child) {
+      margin-top: 0;
+  }
 }
