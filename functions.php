@@ -52,6 +52,13 @@ function add_dynamic_user_avatar_style() {
 }
 add_action('wp_head', 'add_dynamic_user_avatar_style');
 
+add_action('wp_logout','auto_redirect_after_logout');
+
+function auto_redirect_after_logout(){
+  wp_safe_redirect( home_url() );
+  exit;
+}
+
 function move_submenu_inside_container() {
     ?>
     <script>
