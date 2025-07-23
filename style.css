@@ -16,42 +16,12 @@ Text Domain:	 hello-academy-child
 .eael-pricing-icon {
   display: none !important;
 }
-
 .eael-pricing.style-2 .eael-pricing-item .header {
   padding: 25px 15px;
-}
-
-body .wpp-popup-wrapper {
-  position: fixed;
-  z-index: 99999;
-  transition: all .5s cubic-bezier(.14, .06, .41, 1.39);
-  opacity: 0;
-  visibility: hidden;
-}
-
-body .wpp-popup-wrapper.popup-is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Prevent Body from Scrolling when Popup is visible */
-body.wpp-noscroll {
-  overflow: hidden;
 }
 .academy-archive-course-widget__body:has(input[value="public"]) label:nth-of-type(3) {
   display: none;
 }
-/* Center Align Popup Content inside the Section */
-.wpp-popup-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.wpp-popup-close {
-  cursor: pointer;
-}
-
 .profile-dropdown-wrapper {
   cursor: pointer;
 }
@@ -79,7 +49,7 @@ body.wpp-noscroll {
   min-width: 200px;
   z-index: 9999;
 }
-.sub-menu {
+.profile-dropdown-wrapper .sub-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -99,9 +69,21 @@ body.wpp-noscroll {
 .sub-menu li:hover {
   background-color: #f0f0f0;
 }
-
 .eael-pricing.style-2 .eael-pricing-item.featured {
   box-shadow: none !important;
+}
+#academy-dashboard-menu .academy-dashboard-menu__item-store-dashboard, #academy-dashboard-menu .academy-dashboard-menu__item-calendar , .storeengine-floating-cart-button  {
+  display: none;
+}
+.academy-get-notification .academy-icon:before, .academy-edit-btn .academy-icon:before {
+  color: #fff;
+}
+
+.academy-dropdown-menu__lists .academy-more-options__item a, .academy-dropdown-menu__lists .academy-more-options__item button {
+  background: none;
+}
+.academy-table__body-row .academy-dropdown-menu {
+  background: none;
 }
 @media only screen and (min-width : 320px) and (max-width : 767px) {
   .elementor-widget-n-tabs .e-n-tabs-heading {
