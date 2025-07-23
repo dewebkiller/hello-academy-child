@@ -85,6 +85,15 @@ Text Domain:	 hello-academy-child
 .academy-table__body-row .academy-dropdown-menu {
   background: none;
 }
+.academy-store-paid-products-wrapper .academy-btn--product-add {
+  color: #fff;
+}
+.academy-widget--category .academy-btn--add-category {
+  padding: 0.5rem 1rem;
+}
+.academy-postbox--course-certificate .academy-certificate .academy-course-certificate .academy-dropdown-menu {
+  background: none;
+}
 @media only screen and (min-width : 320px) and (max-width : 767px) {
   .elementor-widget-n-tabs .e-n-tabs-heading {
       display: flex;

@@ -98,6 +98,20 @@ function dwk_get_loggedin_users()
     return $output;
 }
 
+
+add_filter('wp_nav_menu_items', 'add_dynamic_logout_link', 10, 2);
+function add_dynamic_logout_link($items, $args) {
+    // Check if the user is logged in.
+    if (is_user_logged_in()) {
+        // Replace '#logout' in the menu with the actual logout URL.
+        // The wp_logout_url() function generates a correct, nonce-protected link.
+        $logout_url = wp_logout_url(home_url('/')); 
+        $items = str_replace('#logout', $logout_url, $items);
+    }
+    return $items;
+}
+
+
 // Google tag (gtag.js) 
 function add_google_analytics_script() {
     ?>
