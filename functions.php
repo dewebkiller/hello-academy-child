@@ -130,6 +130,55 @@ add_action('wp_footer', 'add_google_analytics_script', 20);
 
 
 /**
+ * Enqueues a custom FRONTEND script to modify the Academy LMS level text.
+ */
+function academy_lms_rename_expert_level_frontend() {
+
+    // The JavaScript is identical to the one we used for the admin area.
+    $custom_js = "
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // The function that does the actual work of finding and replacing text.
+        const renameExperts = () => {
+            // This selector targets BOTH the selected value and the dropdown options.
+            const elementsToChange = document.querySelectorAll(
+                '.academy-select-single-label span, .academy-custom-select--option'
+            );
+
+            elementsToChange.forEach(el => {
+                // Check if the text is 'Experts' and change it.
+                if (el.textContent.trim() === 'Experts') {
+                    el.textContent = 'Expert';
+                }
+            });
+        };
+
+        // Run our function once on initial load.
+        renameExperts();
+
+        // Use a MutationObserver to 'watch' for dynamic changes to the page.
+        const observer = new MutationObserver((mutations) => {
+            // When a change is detected, we run our function again.
+            renameExperts();
+        });
+
+        // Tell the observer to watch the entire body of the page.
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+    ";
+
+    // Add the inline script. We can attach it to 'jquery', as it's
+    // commonly available on most WordPress frontends.
+    wp_add_inline_script( 'jquery', $custom_js );
+}
+
+// This is the correct hook to add scripts to the FRONTEND of a WordPress site.
+add_action( 'wp_enqueue_scripts', 'academy_lms_rename_expert_level_frontend' );
+
+/**
  * Enqueues a custom admin script to modify the Academy LMS level text.
  */
 function academy_lms_rename_expert_level_robust() {
