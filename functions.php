@@ -127,3 +127,47 @@ function add_google_analytics_script() {
     <?php
 }
 add_action('wp_footer', 'add_google_analytics_script', 20);
+
+
+/**
+ * Enqueues a custom admin script to modify the Academy LMS level text.
+ */
+function academy_lms_rename_expert_level_robust() {
+
+    $custom_js = "
+    document.addEventListener('DOMContentLoaded', function() {
+        const renameExperts = () => {
+           
+            const elementsToChange = document.querySelectorAll(
+                '.academy-select-single-label span, .academy-custom-select--option'
+            );
+
+            elementsToChange.forEach(el => {
+               
+                if (el.textContent.trim() === 'Experts') {
+                    el.textContent = 'Expert';
+                }
+            });
+        };
+
+      
+        renameExperts();
+
+     
+        const observer = new MutationObserver((mutations) => {
+           
+            renameExperts();
+        });
+
+       
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+    ";
+
+    wp_add_inline_script( 'jquery-core', $custom_js );
+}
+
+add_action( 'admin_enqueue_scripts', 'academy_lms_rename_expert_level_robust' );
